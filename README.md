@@ -105,3 +105,11 @@
 - Focus on user experience and fast checkout, as single-payment B2C platforms rely on smooth purchasing flows  
 - Consider SEO and marketing tools to reach individual bicycle mechanics searching for training  
 - A responsive design is essential, as many users might access the platform from mobile devices while in workshops  
+
+
+
+errors:
+
+- OperationalError: no such table: django_site - This error occurred because I didn't run all the migrations. After running (python manage.py migrate) I was able to see:  
+
+![register](doc/screenshots/01register.png)
