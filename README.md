@@ -223,7 +223,7 @@ Format:
 
 ---
 
-### **EPIC F – Admin**
+### **EPIC E – Admin**
 
 **US-15 – Course CRUD (Basic)**  
 - **As an** admin **I want** to create/edit courses (title, price, category, level, duration, thumbnail) **so that** I can maintain the catalog.  
@@ -240,6 +240,43 @@ Format:
 - **Responsiveness:** mobile-first layouts  
 - **Accessibility:** proper contrast, keyboard navigation  
 - **Observability:** minimal backend error logging
+
+---
+
+## MVP
+
+### Sprint 1 – Highest Priority (MVP-Minimum Viable Product)
+
+**Goal:** Allow a user to create an account, log in, browse the catalog, add courses to the cart, make a purchase, and access the lessons.
+
+**Order:**
+1. **US-01 – User Registration** *(Must, 3 SP)*
+2. **US-02 – Login/Logout** *(Must, 3 SP)*
+3. **US-04 – Course Listing** *(Must, 5 SP)*
+4. **US-06 – Course Details** *(Should, 3 SP)*
+5. **US-07 – Add to Cart** *(Must, 3 SP)*
+6. **US-08 – One-time Payment Checkout** *(Must, 8 SP)*
+7. **US-09 – Confirmation Email & Receipt** *(Must, 2 SP)*
+8. **US-10 – Student Dashboard** *(Must, 3 SP)*
+9. **US-11 – Player & Materials** *(Must, 5 SP)*
+
+This completes a **functional MVP**, where the main user flow is ready:  
+**Register → Log in → View courses → View details → Purchase → Receive email → Watch lessons.**
+
+---
+
+### Sprint 2 – Secondary Features & Basic Admin
+
+**Goal:** Improve user experience and provide basic admin control.
+
+**Order:**
+1. **US-03 – User Profile** *(Should, 2 SP)*
+2. **US-05 – Search and Filters** *(Must, 5 SP)*
+3. **US-15 – Course CRUD (Basic)** *(Should, 8 SP)*
+
+---
+
+## BUGs
 errors:
 
 - OperationalError: no such table: django_site - This error occurred because I didn't run all the migrations. After running (python manage.py migrate) I was able to see:  
