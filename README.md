@@ -1,8 +1,12 @@
 # Bicycle Mechanics Courses E-commerce
 
+---
+
 ## Planning
 
-### 1. Application Type
+### General planning
+
+1. Application Type
 
 **Type:** E-commerce platform for selling digital products (online courses)  
 **Business Model:** Business-to-Consumer (B2C)  
@@ -11,14 +15,14 @@
 
 ---
 
-### 2. Core Features
+2. Core Features
 
-#### **User Authentication & Profiles**
+**User Authentication & Profiles**
 - Account creation with name, email, and password  
 - Login/Logout functionality  
 - Profile page with purchased courses and access history  
 
-#### **Course Catalog**
+**Course Catalog**
 - Display of all available bicycle mechanic courses with:
   - Title and description  
   - Price  
@@ -28,38 +32,38 @@
   - Preview video or sample lesson (optional)  
 - Search and filter functionality by category, level, or price
 
-#### **Shopping Cart and Checkout**
+**Shopping Cart and Checkout**
 - Add single or multiple courses to the cart  
 - Single-payment checkout with credit card, PayPal, or other gateways  
 - Instant payment confirmation and order summary
 
-#### **Student Dashboard (Course Access Area)**
+**Student Dashboard (Course Access Area)**
 - Access to purchased courses immediately after payment  
 - Video player or embedded lessons  
 - Downloadable resources such as PDFs, checklists, or maintenance guides  
 - Progress tracking (optional for a better learning experience)
 
-#### **Course Reviews and Ratings**
+**Course Reviews and Ratings**
 - Students can leave feedback after completing a course  
 - Display of average ratings to build trust for new buyers
 
-#### **Notifications and Emails**
+**Notifications and Emails**
 - Order confirmation email  
 - Course access instructions  
 - Optional marketing emails for new course launches
 
 ---
 
-### 3. Database Structure Overview
+3. Database Structure Overview
 
-#### **Users**
+**Users**
 - `user_id`  
 - `full_name`  
 - `email`  
 - `password_hash`  
 - `date_joined`  
 
-#### **Courses (Digital Products)**
+**Courses (Digital Products)**
 - `course_id`  
 - `title`  
 - `description`  
@@ -70,37 +74,29 @@
 - `duration` (in hours or modules)  
 - `average_rating`  
 
-#### **Orders**
+**Orders**
 - `order_id`  
 - `user_id`  
 - `order_date`  
 - `total_amount`  
 - `payment_status` (Paid / Pending / Failed)
 
-#### **Order Items**
+**Order Items**
 - `order_item_id`  
 - `order_id`  
 - `course_id`  
 - `quantity` (usually 1 per course)
 
-#### **Course Access**
+**Course Access**
 - `access_id`  
 - `user_id`  
 - `course_id`  
 - `purchase_date`  
 - `progress` (optional, % of course completed)
 
-#### **Course Reviews (optional but recommended)**
-- `review_id`  
-- `course_id`  
-- `user_id`  
-- `rating` (1-5 stars)  
-- `comment`  
-- `review_date`  
-
 ---
 
-### 4. Additional Considerations
+4. Additional Considerations
 - No stock or shipping information is needed, since these are digital products  
 - Focus on user experience and fast checkout, as single-payment B2C platforms rely on smooth purchasing flows  
 - Consider SEO and marketing tools to reach individual bicycle mechanics searching for training  
@@ -108,7 +104,7 @@
 
 ---
 
-## **User Stories**
+### **User Stories**
 
 This document describes the **User Stories** for the product, organized by **epics**.  
 Format:  
@@ -125,7 +121,7 @@ Format:
 
 ---
 
-### **EPIC A – Authentication & Profile**
+1. **EPIC A – Authentication & Profile**
 
 **US-01 – User Registration**  
 - **As a** visitor **I want** to create an account with name, email, and password **so that** I can access my purchased courses.  
@@ -158,7 +154,7 @@ Format:
 
 ---
 
-### **EPIC B – Course Catalog**
+2. **EPIC B – Course Catalog**
 
 **US-04 – Course Listing**  
 - **As a** visitor **I want** to see a list of courses with title, price, category, and difficulty **so that** I can choose what to buy.  
@@ -182,7 +178,7 @@ Format:
 
 ---
 
-### **EPIC C – Cart & Checkout**
+3. **EPIC C – Cart & Checkout**
 
 **US-07 – Add to Cart**  
 - **As a** user **I want** to add one or more courses to my cart **so that** I can buy them all at once.  
@@ -207,7 +203,7 @@ Format:
 
 ---
 
-### **EPIC D – Course Access (Student Area)**
+4. **EPIC D – Course Access (Student Area)**
 
 **US-10 – Student Dashboard**  
 - **As a** user **I want** to see my purchased courses **so that** I can quickly access lessons.  
@@ -223,7 +219,7 @@ Format:
 
 ---
 
-### **EPIC E – Admin**
+5. **EPIC E – Admin**
 
 **US-15 – Course CRUD (Basic)**  
 - **As an** admin **I want** to create/edit courses (title, price, category, level, duration, thumbnail) **so that** I can maintain the catalog.  
@@ -233,7 +229,7 @@ Format:
 
 ---
 
-### **Non-Functional Requirements (NFRs)**
+6. **Non-Functional Requirements (NFRs)**
 
 - **Security:** password hashing, HTTPS, token expiration  
 - **Performance:** catalog loads in < 2s on 4G  
@@ -243,9 +239,9 @@ Format:
 
 ---
 
-## MVP
+### MVP
 
-### Sprint 1 – Highest Priority (MVP-Minimum Viable Product)
+1. Sprint 1 – Highest Priority (MVP-Minimum Viable Product)
 
 **Goal:** Allow a user to create an account, log in, browse the catalog, add courses to the cart, make a purchase, and access the lessons.
 
@@ -265,7 +261,7 @@ This completes a **functional MVP**, where the main user flow is ready:
 
 ---
 
-### Sprint 2 – Secondary Features & Basic Admin
+2. Sprint 2 – Secondary Features & Basic Admin
 
 **Goal:** Improve user experience and provide basic admin control.
 
