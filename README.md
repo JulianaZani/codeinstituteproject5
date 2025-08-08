@@ -230,7 +230,7 @@ Format:
 
 5. **EPIC E – Admin**
 
-**US-15 – Course CRUD (Basic)**  
+**US-12 – Course CRUD**  
 - **As an** admin **I want** to create/edit courses (title, price, category, level, duration, thumbnail) **so that** I can maintain the catalog.  
 - **Priority:** Should | **Points:** 8  
 - **Acceptance Criteria:** validations; image upload; save as draft or publish  
@@ -277,7 +277,7 @@ This completes a **functional MVP**, where the main user flow is ready:
 **Order:**
 1. **US-03 – User Profile** *(Should, 2 SP)*
 2. **US-05 – Search and Filters** *(Must, 5 SP)*
-3. **US-15 – Course CRUD (Basic)** *(Should, 8 SP)*
+3. **US-12 – Course CRUD (Basic)** *(Should, 8 SP)*
 
 ---
 
