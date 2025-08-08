@@ -173,13 +173,12 @@ Format:
 - **Tasks:** query params handling, filter UI, combination testing
 
 **US-06 – Course Details**  
-- **As a** visitor **I want** to view a course page with description, duration, preview video, and reviews **so that** I can decide on a purchase.  
+- **As a** visitor **I want** to view a course page with description, duration, difficulty level and price **so that** I can decide on a purchase.  
 - **Priority:** Should | **Points:** 3  
 - **Acceptance Criteria:**  
-  - Course page displays title, price, description, duration, difficulty level, category, and preview video.  
-  - Average rating and number of reviews (if available) are shown.  
+  - Course page displays title, price, description, duration and difficulty level.    
   - “Add to Cart” button is visible and functional.  
-- **Tasks:** `/courses/:id` endpoint, video player, reviews section (read-only)
+- **Tasks:** course details endpoint, course page layout, add-to-cart button
 
 ---
 
