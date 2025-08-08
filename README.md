@@ -2,9 +2,18 @@
 
 ---
 
-## Planning
+## 📑 Table of Contents
 
-### General planning
+1. [Planning](#planning)
+   -[General planning](#general-planning)
+   -[User stories](#user-stories)
+   -[MVP](#mvp)
+2. [Bugs](#bugs)
+
+## Planning  
+[▲ Back to Top](#-table-of-contents)
+
+### General Planning
 
 1. Application Type
 
@@ -273,7 +282,7 @@ This completes a **functional MVP**, where the main user flow is ready:
 ---
 
 ## BUGs
-errors:
+[▲ Back to Top](#-table-of-contents)
 
 - OperationalError: no such table: django_site - This error occurred because I didn't run all the migrations. After running (python manage.py migrate) I was able to see:  
 
