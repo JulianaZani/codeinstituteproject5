@@ -1,14 +1,14 @@
-# Virtual environment
 venv/
-
-# Django
 __pycache__/
 *.pyc
 db.sqlite3
 *.sqlite3
-
-# VSCode
 .vscode/
-
-# Logs
 *.log
+.env
+*.pot
+*.py[cod]
+.env.*
+.idea/
+/staticfiles/
+media/

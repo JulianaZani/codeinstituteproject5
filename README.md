@@ -1,4 +1,4 @@
-# Bicycle Mechanics Courses E-commerce
+# CYCLEFIX ACADEMY - Bicycle Mechanics Courses E-commerce
 
 ---
 
