@@ -4,11 +4,11 @@
 
 ## 📑 Table of Contents
 
-1. [Planning](#planning)
-   -[General planning](#general-planning)
-   -[User stories](#user-stories)
-   -[MVP](#mvp)
-2. [Bugs](#bugs)
+1. [Planning](#planning)  
+   -[General planning](#general-planning)  
+   -[User stories](#user-stories)  
+   -[MVP](#mvp)  
+2. [Bugs](#bugs)  
 
 ## Planning  
 [▲ Back to Top](#-table-of-contents)
@@ -65,51 +65,64 @@
 
 3. Database Structure Overview
 
+The application is built on a **relational database** that follows Django ORM conventions.  
+The schema is designed to ensure **clear relationships** between entities and **support all CRUD operations** efficiently.
+
 **Users**
-- `user_id`  
+- `user_id` (PK)  
 - `full_name`  
-- `email`  
+- `email` (unique)  
 - `password_hash`  
 - `date_joined`  
 
-**Courses (Digital Products)**
-- `course_id`  
+**Courses** *(Digital Products)*  
+- `course_id` (PK)  
 - `title`  
 - `description`  
 - `price`  
 - `thumbnail_image`  
-- `category` (Basic, Advanced, Electric Bikes, etc.)  
-- `difficulty_level` (Beginner, Intermediate, Advanced)  
-- `duration` (in hours or modules)  
+- `category` *(Basic, Advanced, Electric Bikes, etc.)*  
+- `difficulty_level` *(Beginner, Intermediate, Advanced)*  
+- `duration` *(hours or modules)*  
 - `average_rating`  
 
 **Orders**
-- `order_id`  
-- `user_id`  
+- `order_id` (PK)  
+- `user_id` (FK → Users)  
 - `order_date`  
 - `total_amount`  
-- `payment_status` (Paid / Pending / Failed)
+- `payment_status` *(Paid / Pending / Failed)*  
 
 **Order Items**
-- `order_item_id`  
-- `order_id`  
-- `course_id`  
-- `quantity` (usually 1 per course)
+- `order_item_id` (PK)  
+- `order_id` (FK → Orders)  
+- `course_id` (FK → Courses)  
+- `quantity` *(default = 1)*  
 
 **Course Access**
-- `access_id`  
-- `user_id`  
-- `course_id`  
+- `access_id` (PK)  
+- `user_id` (FK → Users)  
+- `course_id` (FK → Courses)  
 - `purchase_date`  
-- `progress` (optional, % of course completed)
+- `progress` *(optional, percentage completed)*  
+
+> **Note:** This structure ensures:
+> - A clear separation between orders and the courses purchased.  
+> - The ability to store and retrieve purchase history per user.  
+> - Flexibility for adding progress tracking or course updates in the future.  
 
 ---
 
-4. Additional Considerations
-- No stock or shipping information is needed, since these are digital products  
-- Focus on user experience and fast checkout, as single-payment B2C platforms rely on smooth purchasing flows  
-- Consider SEO and marketing tools to reach individual bicycle mechanics searching for training  
-- A responsive design is essential, as many users might access the platform from mobile devices while in workshops  
+4. Design & Business Considerations
+This project is designed for **digital-only products** (no physical shipping or stock control).  
+The primary focus is on **delivering a smooth, secure, and mobile-friendly purchasing experience** for a B2C audience.
+
+**Key Considerations**
+- **Frictionless Checkout** – Single-payment model with minimal steps between product selection and payment confirmation.  
+- **Responsive Design** – Mobile-first layouts to support users who may access the platform from workshops or on-the-go.  
+- **SEO & Marketing Readiness** – Clear metadata, search-friendly structure, and social media integration to reach target audiences.  
+- **Digital Product Delivery** – Immediate access to courses after payment, with secure video hosting and downloadable resources.  
+- **Scalability** – Database and structure prepared to support more courses, categories, and future features like progress tracking or certifications.  
 
 ---
 
