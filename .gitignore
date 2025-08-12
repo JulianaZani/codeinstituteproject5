@@ -1,14 +1,50 @@
+# ——— Python / Django ———
 venv/
+.venv/
 __pycache__/
-*.pyc
+*.py[cod]
+*.log
+*.pot
+
+# Local database (do not commit)
 db.sqlite3
 *.sqlite3
-.vscode/
-*.log
+*.sqlite3-journal
+
+# Build / artifacts
+*.egg-info/
+dist/
+build/
+
+# Coverage / caches / tooling
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# ——— Django: static & media ———
+# Do NOT ignore your app "static/" source directories!
+/staticfiles/    # collectstatic output (STATIC_ROOT)
+/media/          # local uploads (use external storage in production)
+
+# ——— Environment / IDE ———
 .env
-*.pot
-*.py[cod]
 .env.*
+.vscode/
 .idea/
-/staticfiles/
-media/
+*.code-workspace
+.python-version   # pyenv
+.direnv/
+.history
+
+# ——— OS specific ———
+.DS_Store         # macOS
+Thumbs.db         # Windows
+
+# ——— Front-end ———
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
