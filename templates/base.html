@@ -2,29 +2,64 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% block meta %}
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% block extrameta %}{% endblock extrameta %}
+    {% endblock meta %}
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CYCLEFIX ACADEMY</title>
+    <title>CYCLEFIX ACADEMY{% block extratitle %}{% endblock extratitle %}</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
-          rel="stylesheet" 
-          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
-          crossorigin="anonymous">
-
-    
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+    {% block corecss %}
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock corecss %}
+    {% block extracss %}{% endblock extracss %}
   </head>
-  
-  <body>
-    
-    
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" 
-            crossorigin="anonymous"></script>
+  <body>
+    {% block page_header %}
+      <header class="container-fluid fixed-top bg-body">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+          <div class="container">
+            <a class="navbar-brand fw-semibold" href="/">CycleFix Academy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+              <ul class="navbar-nav ms-auto">
+                <!-- Exemplo de links; ajuste como quiser -->
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    {% endblock page_header %}
+
+    <div style="height: 4.5rem;"></div>
+
+    {% if messages %}
+      <div class="container mt-3">
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags|default:'info' }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <main class="container py-4">
+      {% block content %}{% endblock content %}
+    </main>
+
+    {% block corejs %}
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    {% endblock corejs %}
+    {% block extrajs %}{% endblock extrajs %}
   </body>
 </html>
