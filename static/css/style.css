@@ -1,18 +1,18 @@
 html, body { height: 100%; }
 
 body {
-  color: #000;
+  color: rgb(3, 3, 70);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
                Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji",
                "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-.logo-font { text-transform: uppercase; letter-spacing: .02em; }
-.text-black { color: #000 !important; }
-.border-black { border-color: #000 !important; }
+.header-spacer {
+  height: 4.5rem;
+}
 
 .shop-now-button {
-  background: #000;
+  background: rgb(3, 3, 70);
   color: #fff !important;
   border: 1px solid #000;
   transition: all .15s ease-in-out;
@@ -20,7 +20,7 @@ body {
 .shop-now-button:hover,
 .shop-now-button:focus {
   background: transparent;
-  color: #000 !important;
+  color: rgb(3, 3, 70) !important;
 }
 
 .header-container {
