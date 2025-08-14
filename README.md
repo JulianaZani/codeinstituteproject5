@@ -1,4 +1,6 @@
-# CYCLEFIX ACADEMY - Bicycle Mechanics Courses E-commerce
+# CYCLEFIX ACADEMY - Bicycle Mechanics Courses E-commerce  
+
+I’ve been thinking about this project since the very beginning of my course. In fact, the favicon I chose—a blue bicycle—is the same one I used in my very first project. From the start, I’ve been preparing to create a website to host the bicycle mechanic course my husband has been developing. This website will be my gift to him.  
 
 ---
 
