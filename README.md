@@ -11,6 +11,7 @@ I’ve been thinking about this project since the very beginning of my course. I
    -[User stories](#user-stories)  
    -[MVP](#mvp)  
 2. [Bugs](#bugs)  
+3. [Credits](#credits)
 
 ## Planning  
 [▲ Back to Top](#-table-of-contents)
@@ -304,5 +305,6 @@ This completes a **functional MVP**, where the main user flow is ready:
 ![register](doc/screenshots/01register.png)  
 
 ## Credits  
+[▲ Back to Top](#-table-of-contents)  
 
 Bootstrap website: https://getbootstrap.com/docs/5.3/utilities/spacing/
