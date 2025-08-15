@@ -11,14 +11,14 @@ body {
   height: 4.5rem;
 }
 
-.shop-now-button {
+.all-courses-button {
   background: rgb(3, 3, 70);
   color: #fff !important;
   border: 1px solid #000;
   transition: all .15s ease-in-out;
 }
-.shop-now-button:hover,
-.shop-now-button:focus {
+.all-courses-button:hover,
+.all-courses-button:focus {
   background: transparent;
   color: rgb(3, 3, 70) !important;
 }
