@@ -1,3 +1,7 @@
+# courses/views.py
 from django.shortcuts import render
 
-# Create your views here.
+
+def course_list(request):
+    """Show a list of courses."""
+    return render(request, "courses/courses.html")
