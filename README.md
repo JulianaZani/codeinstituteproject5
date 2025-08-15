@@ -1,6 +1,6 @@
 # CYCLEFIX ACADEMY - Bicycle Mechanics Courses E-commerce  
 
-I’ve been thinking about this project since the very beginning of my course. In fact, the favicon I chose—a blue bicycle—is the same one I used in my very first project. From the start, I’ve been preparing to create a website to host the bicycle mechanic course my husband has been developing. This website will be my gift to him.  
+I’ve been thinking about this project since the very beginning of my course. In fact, the favicon I chose, a blue bicycle, is the same one I used in my very first project. From the start, I’ve been preparing to create a website to host the bicycle mechanic course my husband has been developing. This website will be my gift to him.  
 
 ---
 
@@ -10,8 +10,10 @@ I’ve been thinking about this project since the very beginning of my course. I
    -[General planning](#general-planning)  
    -[User stories](#user-stories)  
    -[MVP](#mvp)  
-2. [Bugs](#bugs)  
-3. [Credits](#credits)
+2. [Deployment](#deployment)   
+3. [Security](#security)     
+4. [Bugs](#bugs)  
+5. [Credits](#credits)  
 
 ## Planning  
 [▲ Back to Top](#-table-of-contents)
@@ -297,6 +299,15 @@ This completes a **functional MVP**, where the main user flow is ready:
 
 ---
 
+## Deployment
+[▲ Back to Top](#-table-of-contents)
+
+---
+
+## Security  
+[▲ Back to Top](#-table-of-contents)
+
+---
 ## BUGs
 [▲ Back to Top](#-table-of-contents)
 
