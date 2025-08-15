@@ -301,4 +301,8 @@ This completes a **functional MVP**, where the main user flow is ready:
 
 - OperationalError: no such table: django_site - This error occurred because I didn't run all the migrations. After running (python manage.py migrate) I was able to see:  
 
-![register](doc/screenshots/01register.png)
+![register](doc/screenshots/01register.png)  
+
+## Credits  
+
+Bootstrap website: https://getbootstrap.com/docs/5.3/utilities/spacing/
