@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Course Detail</h1>
+        <div class="card mb-3">
+        <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ course.title }}</h5>
+            <p class="card-text">{{ course.description }}</p>
+            <p class="card-text"><small class="text-muted">Created on: {{ course.created_at|date:"F j, Y" }}</small></p>
+            <a href="{% url 'courses:list' %}" class="btn btn-primary">Back to Courses</a>
+        </div>
+        </div>
+    </div>
+{% endblock content %}
