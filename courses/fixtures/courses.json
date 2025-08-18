@@ -167,5 +167,18 @@
       "level": "beginner",
       "duration_hours": 3
     }
+  },
+  {
+    "model": "courses.course",
+    "pk": 14,
+    "fields": {
+      "title": "Cycling Advocacy and Community Building",
+      "slug": "cycling-advocacy-and-community-building",
+      "description": "Learn how to promote cycling in your community, engage with local advocacy groups, and organize events to support cycling initiatives.",
+      "price": "19.99",
+      "category": "basic",
+      "level": "beginner",
+      "duration_hours": 4
+    }
   }
 ]

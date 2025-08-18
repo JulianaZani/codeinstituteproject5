@@ -16,7 +16,7 @@ class Course(models.Model):
     ]
 
     title = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True, blank=True)  # usado para URL amigável
+    slug = models.SlugField(unique=True, blank=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=8, decimal_places=2)
     category = models.CharField(max_length=50, choices=CATEGORIES)
