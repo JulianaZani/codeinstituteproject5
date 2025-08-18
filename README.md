@@ -43,7 +43,6 @@ I’ve been thinking about this project since the very beginning of my course. I
   - Category (e.g., Basic Maintenance, Advanced Repairs, Electric Bikes)  
   - Difficulty level (Beginner, Intermediate, Advanced)  
   - Estimated course duration (hours or modules)  
-  - Preview video or sample lesson (optional)  
 - Search and filter functionality by category, level, or price
 
 **Shopping Cart and Checkout**
@@ -318,4 +317,5 @@ This completes a **functional MVP**, where the main user flow is ready:
 ## Credits  
 [▲ Back to Top](#-table-of-contents)  
 
-Bootstrap website: https://getbootstrap.com/docs/5.3/utilities/spacing/
+Bootstrap website: https://getbootstrap.com/docs/5.3/utilities/spacing/  
+https://www.flickr.com/photos/newcastlelibraries/4090395714 (image - old bike shop)
