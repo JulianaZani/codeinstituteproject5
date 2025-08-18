@@ -1,0 +1,171 @@
+[
+  {
+    "model": "courses.course",
+    "pk": 1,
+    "fields": {
+      "title": "Basic Bicycle Maintenance",
+      "slug": "basic-bicycle-maintenance",
+      "description": "Learn puncture repair, brake adjustments, chain lubrication and safety checks.",
+      "price": "29.99",
+      "category": "basic",
+      "level": "beginner",
+      "duration_hours": 5
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 2,
+    "fields": {
+      "title": "Intermediate Drivetrain Tuning",
+      "slug": "intermediate-drivetrain-tuning",
+      "description": "Indexing gears, replacing cables/housing, derailleur alignment and troubleshooting noise.",
+      "price": "39.00",
+      "category": "advanced",
+      "level": "intermediate",
+      "duration_hours": 7
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 3,
+    "fields": {
+      "title": "Advanced Wheel Truing & Hubs",
+      "slug": "advanced-wheel-truing-hubs",
+      "description": "Tension balance, lateral/radial true, dishing, hub overhaul and bearing preload.",
+      "price": "59.00",
+      "category": "advanced",
+      "level": "advanced",
+      "duration_hours": 12
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 4,
+    "fields": {
+      "title": "E-Bike Systems Fundamentals",
+      "slug": "e-bike-systems-fundamentals",
+      "description": "Safety, connectors, sensors, common mid-drive vs hub systems and diagnostic basics.",
+      "price": "69.00",
+      "category": "electric",
+      "level": "beginner",
+      "duration_hours": 6
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 5,
+    "fields": {
+      "title": "Hydraulic Brakes Masterclass",
+      "slug": "hydraulic-brakes-masterclass",
+      "description": "Bleeding procedures, pad/rotor selection, lever reach/biting point and contamination fixes.",
+      "price": "49.50",
+      "category": "advanced",
+      "level": "intermediate",
+      "duration_hours": 8
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 6,
+    "fields": {
+      "title": "Cycling Safety & First Aid",
+      "slug": "cycling-safety-first-aid",
+      "description": "Basic first aid, emergency repairs, safety gear and accident prevention strategies.",
+      "price": "24.99",
+      "category": "basic",
+      "level": "beginner",
+      "duration_hours": 4
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 7,
+    "fields": {
+      "title": "Bike Fit Essentials",
+      "slug": "bike-fit-essentials",
+      "description": "Understanding bike fit, saddle height, reach adjustments and common fit issues.",
+      "price": "34.99",
+      "category": "basic",
+      "level": "beginner",
+      "duration_hours": 5
+    }
+  },    
+  {
+    "model": "courses.course",
+    "pk": 8,
+    "fields": {
+      "title": "Cycling Nutrition & Hydration",
+      "slug": "cycling-nutrition-hydration",
+      "description": "Fueling for performance, hydration strategies, recovery nutrition and meal planning.",
+      "price": "19.99",
+      "category": "basic",
+      "level": "beginner",
+      "duration_hours": 3
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 9,
+    "fields": {
+      "title": "Mountain Bike Skills Development",
+      "slug": "mountain-bike-skills-development",
+      "description": "Cornering, climbing techniques, descending control and obstacle navigation.",
+      "price": "44.99",
+      "category": "basic",
+      "level": "intermediate",
+      "duration_hours": 6
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 10,
+    "fields": {
+      "title": "Urban Cycling Techniques",
+      "slug": "urban-cycling-techniques",
+      "description": "Navigating traffic, bike handling in urban environments, and safety tips.",
+      "price": "29.99",
+      "category": "basic",
+      "level": "beginner",
+      "duration_hours": 4
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 11,
+    "fields": {
+      "title": "Cycling for Fitness",
+      "slug": "cycling-for-fitness",
+      "description": "Building endurance, interval training, and cycling as a fitness routine.",
+      "price": "39.99",
+      "category": "basic",
+      "level": "beginner",
+      "duration_hours": 5
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 12,
+    "fields": {
+      "title": "Bikepacking Basics",
+      "slug": "bikepacking-basics",
+      "description": "Planning routes, packing essentials, and bike setup for multi-day trips.",
+      "price": "54.99",
+      "category": "basic",
+      "level": "intermediate",
+      "duration_hours": 7
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 13,
+    "fields": {
+      "title": "History and Evolution of Bicycles",
+      "slug": "history-and-evolution-of-bicycles",
+      "description": "Explore the origins of bicycles, key technological milestones, cultural impact, and how bikes evolved into the machines we ride today.",
+      "price": "14.99",
+      "category": "basic",
+      "level": "beginner",
+      "duration_hours": 3
+    }
+  }
+]
