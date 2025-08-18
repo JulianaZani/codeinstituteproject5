@@ -318,4 +318,6 @@ This completes a **functional MVP**, where the main user flow is ready:
 [▲ Back to Top](#-table-of-contents)  
 
 Bootstrap website: https://getbootstrap.com/docs/5.3/utilities/spacing/  
-https://www.flickr.com/photos/newcastlelibraries/4090395714 (image - old bike shop)
+Images:  
+https://www.flickr.com/photos/newcastlelibraries/4090395714 (image - old bike shop)  
+https://stockcake.com/i/bike-repair-workshop_1353557_1077619 (A cyclist in an orange helmet attentively adjusts a bicycle in a well-equipped repair workshop.)  
