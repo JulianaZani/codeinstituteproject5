@@ -321,4 +321,6 @@ Bootstrap website: https://getbootstrap.com/docs/5.3/utilities/spacing/
 Images:  
 https://www.flickr.com/photos/newcastlelibraries/4090395714 (historyandevolutionofbicycles image)  
 https://stockcake.com/i/bike-repair-workshop_1353557_1077619 (basicbicyclemaintenance image)  
-https://www.rawpixel.com/image/432147/free-photo-image-bicycle-chain-bike (intermediatedrivetraintuning)
+https://www.rawpixel.com/image/432147/free-photo-image-bicycle-chain-bike (intermediatedrivetraintuning)  
+https://www.flickr.com/photos/yersinia/2695698832 (advancedwheeltruinghubs image)  
+https://commons.wikimedia.org/wiki/File:EP8_Trekking_%2831%29.jpg (ebikesystemsfundamentals)  
