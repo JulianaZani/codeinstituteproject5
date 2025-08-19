@@ -146,19 +146,6 @@
     "model": "courses.course",
     "pk": 12,
     "fields": {
-      "title": "Bikepacking Basics",
-      "slug": "bikepacking-basics",
-      "description": "Planning routes, packing essentials, and bike setup for multi-day trips.",
-      "price": "54.99",
-      "category": "basic",
-      "level": "intermediate",
-      "duration_hours": 7
-    }
-  },
-  {
-    "model": "courses.course",
-    "pk": 13,
-    "fields": {
       "title": "History and Evolution of Bicycles",
       "slug": "history-and-evolution-of-bicycles",
       "description": "Explore the origins of bicycles, key technological milestones, cultural impact, and how bikes evolved into the machines we ride today.",
@@ -166,19 +153,6 @@
       "category": "basic",
       "level": "beginner",
       "duration_hours": 3
-    }
-  },
-  {
-    "model": "courses.course",
-    "pk": 14,
-    "fields": {
-      "title": "Cycling Advocacy and Community Building",
-      "slug": "cycling-advocacy-and-community-building",
-      "description": "Learn how to promote cycling in your community, engage with local advocacy groups, and organize events to support cycling initiatives.",
-      "price": "19.99",
-      "category": "basic",
-      "level": "beginner",
-      "duration_hours": 4
     }
   }
 ]
