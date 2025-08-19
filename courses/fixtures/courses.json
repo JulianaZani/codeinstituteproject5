@@ -9,7 +9,8 @@
       "price": "29.99",
       "category": "basic",
       "level": "beginner",
-      "duration_hours": 5
+      "duration_hours": 5,
+      "thumbnail": "courses/thumbnails/01basicbicyclemaintenance.webp"
     }
   },
   {
@@ -22,7 +23,8 @@
       "price": "39.00",
       "category": "advanced",
       "level": "intermediate",
-      "duration_hours": 7
+      "duration_hours": 7,
+      "thumbnail": "courses/thumbnails/02intermediatedrivetrain.webp"
     }
   },
   {
@@ -35,7 +37,8 @@
       "price": "59.00",
       "category": "advanced",
       "level": "advanced",
-      "duration_hours": 12
+      "duration_hours": 12,
+      "thumbnail": "courses/thumbnails/03advancedwheeltruing.webp"
     }
   },
   {
@@ -48,7 +51,8 @@
       "price": "69.00",
       "category": "electric",
       "level": "beginner",
-      "duration_hours": 6
+      "duration_hours": 6,
+      "thumbnail": "courses/thumbnails/04ebikesystems.webp"
     }
   },
   {
@@ -61,7 +65,8 @@
       "price": "49.50",
       "category": "advanced",
       "level": "intermediate",
-      "duration_hours": 8
+      "duration_hours": 8,
+      "thumbnail": "courses/thumbnails/05hydraulicbrakes.webp"
     }
   },
   {
@@ -74,7 +79,8 @@
       "price": "24.99",
       "category": "basic",
       "level": "beginner",
-      "duration_hours": 4
+      "duration_hours": 4,
+      "thumbnail": "courses/thumbnails/06cyclingsafety.webp"
     }
   },
   {
@@ -87,7 +93,8 @@
       "price": "34.99",
       "category": "basic",
       "level": "beginner",
-      "duration_hours": 5
+      "duration_hours": 5,
+      "thumbnail": "courses/thumbnails/07bikefitessentials.webp"
     }
   },    
   {
@@ -100,7 +107,8 @@
       "price": "19.99",
       "category": "basic",
       "level": "beginner",
-      "duration_hours": 3
+      "duration_hours": 3,
+      "thumbnail": "courses/thumbnails/08cyclingnutrition.webp"
     }
   },
   {
@@ -113,7 +121,8 @@
       "price": "44.99",
       "category": "basic",
       "level": "intermediate",
-      "duration_hours": 6
+      "duration_hours": 6,
+      "thumbnail": "courses/thumbnails/09mountainbikeskills.webp"
     }
   },
   {
@@ -126,7 +135,8 @@
       "price": "29.99",
       "category": "basic",
       "level": "beginner",
-      "duration_hours": 4
+      "duration_hours": 4,
+      "thumbnail": "courses/thumbnails/10urbancyclingtechniques.webp"
     }
   },
   {
@@ -139,7 +149,8 @@
       "price": "39.99",
       "category": "basic",
       "level": "beginner",
-      "duration_hours": 5
+      "duration_hours": 5,
+      "thumbnail": "courses/thumbnails/11cyclingforfitness.webp"
     }
   },
   {
@@ -152,7 +163,8 @@
       "price": "14.99",
       "category": "basic",
       "level": "beginner",
-      "duration_hours": 3
+      "duration_hours": 3,
+      "thumbnail": "courses/thumbnails/12historyandevolution.webp"
     }
   }
 ]
