@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+  <!-- Breadcrumb -->
   <nav aria-label="breadcrumb" class="mb-4">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -11,7 +12,7 @@
   </nav>
 
   <div class="row g-4 align-items-start">
-
+    <!-- Course Image -->
     <div class="col-12 col-lg-6">
       <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden bg-light">
         {% if course.thumbnail %}
@@ -22,6 +23,7 @@
       </div>
     </div>
 
+    <!-- Course Details -->
     <div class="col-12 col-lg-6">
       <h1 class="h2 mb-2">{{ course.title }}</h1>
 
@@ -29,7 +31,9 @@
         <span class="badge text-bg-primary">{{ course.get_category_display }}</span>
         <span class="badge text-bg-secondary">{{ course.get_level_display }}</span>
         {% if course.duration_hours %}
-          <span class="badge text-bg-light border"><i class="fa-regular fa-clock me-1"></i>{{ course.duration_hours }}h</span>
+          <span class="badge text-bg-light border">
+            <i class="fa-regular fa-clock me-1"></i>{{ course.duration_hours }}h
+          </span>
         {% endif %}
       </div>
 
@@ -37,15 +41,16 @@
 
       <div class="d-flex align-items-center gap-3 mb-4">
         <span class="fs-3 fw-bold">${{ course.price|floatformat:2 }}</span>
-        <small class="text-muted">Preço único</small>
+        <small class="text-muted">One-time payment</small>
       </div>
 
       <div class="d-flex flex-wrap gap-2">
+        <!-- Adjust this href once your checkout/cart view is ready -->
         <a href="#" class="btn btn-primary btn-lg">
-          <i class="fa-solid fa-cart-shopping me-2"></i>Comprar curso
+          <i class="fa-solid fa-cart-shopping me-2"></i>Buy this course
         </a>
         <a href="{% url 'courses:list' %}" class="btn btn-outline-secondary btn-lg">
-          Voltar aos cursos
+          Back to Courses
         </a>
       </div>
 
@@ -53,11 +58,12 @@
 
       <p class="text-muted mb-0">
         <i class="fa-regular fa-calendar me-1"></i>
-        Publicado em: {{ course.created_at|date:"F j, Y" }}
+        Published on: {{ course.created_at|date:"F j, Y" }}
       </p>
     </div>
   </div>
 
+  <!-- Optional: Related courses -->
   {# 
   <hr class="my-5">
   <h2 class="h4 mb-3">You may also like</h2>
