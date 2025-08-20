@@ -11,7 +11,7 @@
   </nav>
 
   <div class="row g-4 align-items-start">
-    <!-- Imagem -->
+
     <div class="col-12 col-lg-6">
       <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden bg-light">
         {% if course.thumbnail %}
@@ -22,7 +22,6 @@
       </div>
     </div>
 
-    <!-- Detalhes -->
     <div class="col-12 col-lg-6">
       <h1 class="h2 mb-2">{{ course.title }}</h1>
 
@@ -42,7 +41,6 @@
       </div>
 
       <div class="d-flex flex-wrap gap-2">
-        <!-- Ajuste o href conforme sua rota de checkout/carrinho, se já existir -->
         <a href="#" class="btn btn-primary btn-lg">
           <i class="fa-solid fa-cart-shopping me-2"></i>Comprar curso
         </a>
@@ -60,10 +58,9 @@
     </div>
   </div>
 
-  <!-- Se quiser, uma seção de “você também pode gostar” -->
   {# 
   <hr class="my-5">
-  <h2 class="h4 mb-3">Você também pode gostar</h2>
+  <h2 class="h4 mb-3">You may also like</h2>
   <div class="row g-3">
     {% for similar in related_courses %}
       <div class="col-12 col-sm-6 col-md-4">
