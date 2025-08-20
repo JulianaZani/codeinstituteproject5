@@ -1,6 +1,39 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-  <h1>All Courses</h1>
-  <p>Here will be the course list...</p>
+  <div class="container mt-5">
+    <h1 class="mb-4 text-center">All Courses</h1>
+
+    {% if courses %}
+      <div class="row g-4">
+        {% for course in courses %}
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100 shadow-sm">
+              {% if course.thumbnail %}
+                <img src="{{ course.thumbnail.url }}" class="card-img-top" alt="{{ course.title }}">
+              {% else %}
+                <img src="{% static 'images/default-course.jpg' %}" class="card-img-top" alt="No image available">
+              {% endif %}
+              
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ course.title }}</h5>
+                <p class="card-text text-muted mb-2">
+                  {{ course.category|title }} • {{ course.level|title }}
+                </p>
+                <p class="fw-semibold mb-3">${{ course.price }}</p>
+                
+                <a href="{% url 'courses:detail' course.slug %}" 
+                   class="btn btn-outline-primary mt-auto">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-center text-muted">No courses available at the moment.</p>
+    {% endif %}
+  </div>
 {% endblock content %}

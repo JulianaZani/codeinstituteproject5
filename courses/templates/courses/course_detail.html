@@ -2,16 +2,86 @@
 {% load static %}
 
 {% block content %}
-    <div class="container mt-5">
-        <h1 class="mb-4">Course Detail</h1>
-        <div class="card mb-3">
-        <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
-        <div class="card-body">
-            <h5 class="card-title">{{ course.title }}</h5>
-            <p class="card-text">{{ course.description }}</p>
-            <p class="card-text"><small class="text-muted">Created on: {{ course.created_at|date:"F j, Y" }}</small></p>
-            <a href="{% url 'courses:list' %}" class="btn btn-primary">Back to Courses</a>
-        </div>
-        </div>
+  <nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'courses:list' %}">Courses</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ course.title }}</li>
+    </ol>
+  </nav>
+
+  <div class="row g-4 align-items-start">
+    <!-- Imagem -->
+    <div class="col-12 col-lg-6">
+      <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden bg-light">
+        {% if course.thumbnail %}
+          <img src="{{ course.thumbnail.url }}" alt="{{ course.title }}" class="w-100 h-100 object-fit-cover">
+        {% else %}
+          <img src="{% static 'images/default-course.jpg' %}" alt="No image available" class="w-100 h-100 object-fit-cover">
+        {% endif %}
+      </div>
     </div>
+
+    <!-- Detalhes -->
+    <div class="col-12 col-lg-6">
+      <h1 class="h2 mb-2">{{ course.title }}</h1>
+
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        <span class="badge text-bg-primary">{{ course.get_category_display }}</span>
+        <span class="badge text-bg-secondary">{{ course.get_level_display }}</span>
+        {% if course.duration_hours %}
+          <span class="badge text-bg-light border"><i class="fa-regular fa-clock me-1"></i>{{ course.duration_hours }}h</span>
+        {% endif %}
+      </div>
+
+      <p class="lead mb-3">{{ course.description }}</p>
+
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <span class="fs-3 fw-bold">${{ course.price|floatformat:2 }}</span>
+        <small class="text-muted">Preço único</small>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2">
+        <!-- Ajuste o href conforme sua rota de checkout/carrinho, se já existir -->
+        <a href="#" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-cart-shopping me-2"></i>Comprar curso
+        </a>
+        <a href="{% url 'courses:list' %}" class="btn btn-outline-secondary btn-lg">
+          Voltar aos cursos
+        </a>
+      </div>
+
+      <hr class="my-4">
+
+      <p class="text-muted mb-0">
+        <i class="fa-regular fa-calendar me-1"></i>
+        Publicado em: {{ course.created_at|date:"F j, Y" }}
+      </p>
+    </div>
+  </div>
+
+  <!-- Se quiser, uma seção de “você também pode gostar” -->
+  {# 
+  <hr class="my-5">
+  <h2 class="h4 mb-3">Você também pode gostar</h2>
+  <div class="row g-3">
+    {% for similar in related_courses %}
+      <div class="col-12 col-sm-6 col-md-4">
+        <a href="{% url 'courses:detail' similar.slug %}" class="text-decoration-none">
+          <div class="card h-100">
+            {% if similar.thumbnail %}
+              <img src="{{ similar.thumbnail.url }}" class="card-img-top" alt="{{ similar.title }}">
+            {% else %}
+              <img src="{% static 'images/default-course.jpg' %}" class="card-img-top" alt="">
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title mb-1">{{ similar.title }}</h5>
+              <small class="text-muted">{{ similar.get_category_display }} • {{ similar.get_level_display }}</small>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  #}
 {% endblock content %}
