@@ -77,7 +77,7 @@
       "slug": "cycling-safety-first-aid",
       "description": "Basic first aid, emergency repairs, safety gear and accident prevention strategies.",
       "price": "24.99",
-      "category": "basic",
+      "category": "safety",
       "level": "beginner",
       "duration_hours": 4,
       "thumbnail": "courses/thumbnails/06cyclingsafety.webp"
@@ -105,7 +105,7 @@
       "slug": "cycling-nutrition-hydration",
       "description": "Fueling for performance, hydration strategies, recovery nutrition and meal planning.",
       "price": "19.99",
-      "category": "basic",
+      "category": "safety",
       "level": "beginner",
       "duration_hours": 3,
       "thumbnail": "courses/thumbnails/08cyclingnutrition.webp"
@@ -119,7 +119,7 @@
       "slug": "mountain-bike-skills-development",
       "description": "Cornering, climbing techniques, descending control and obstacle navigation.",
       "price": "44.99",
-      "category": "basic",
+      "category": "safety",
       "level": "intermediate",
       "duration_hours": 6,
       "thumbnail": "courses/thumbnails/09mountainbikeskills.webp"
@@ -133,7 +133,7 @@
       "slug": "urban-cycling-techniques",
       "description": "Navigating traffic, bike handling in urban environments, and safety tips.",
       "price": "29.99",
-      "category": "basic",
+      "category": "safety",
       "level": "beginner",
       "duration_hours": 4,
       "thumbnail": "courses/thumbnails/10urbancyclingtechniques.webp"
@@ -147,7 +147,7 @@
       "slug": "cycling-for-fitness",
       "description": "Building endurance, interval training, and cycling as a fitness routine.",
       "price": "39.99",
-      "category": "basic",
+      "category": "safety",
       "level": "beginner",
       "duration_hours": 5,
       "thumbnail": "courses/thumbnails/11cyclingforfitness.webp"
@@ -161,7 +161,7 @@
       "slug": "history-and-evolution-of-bicycles",
       "description": "Explore the origins of bicycles, key technological milestones, cultural impact, and how bikes evolved into the machines we ride today.",
       "price": "14.99",
-      "category": "basic",
+      "category": "history",
       "level": "beginner",
       "duration_hours": 3,
       "thumbnail": "courses/thumbnails/12historyandevolution.webp"

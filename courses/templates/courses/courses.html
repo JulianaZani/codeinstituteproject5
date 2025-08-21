@@ -21,7 +21,7 @@
                 <p class="card-text text-muted mb-2">
                   {{ course.category|title }} • {{ course.level|title }}
                 </p>
-                <p class="fw-semibold mb-3">${{ course.price }}</p>
+                <p class="fw-semibold mb-3">€{{ course.price }}</p>
                 
                 <a href="{% url 'courses:detail' course.slug %}" 
                    class="btn btn-outline-primary mt-auto">

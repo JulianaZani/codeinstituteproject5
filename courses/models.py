@@ -13,6 +13,8 @@ class Course(models.Model):
         ("basic", "Basic Maintenance"),
         ("advanced", "Advanced Repairs"),
         ("electric", "Electric Bikes"),
+        ("safety", "Safety & Health"),
+        ("history", "History"),
     ]
 
     title = models.CharField(max_length=200)

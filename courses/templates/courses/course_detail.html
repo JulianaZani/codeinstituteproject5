@@ -31,7 +31,7 @@
       <p class="lead mb-3">{{ course.description }}</p>
 
       <div class="d-flex align-items-center gap-3 mb-4">
-        <span class="fs-3 fw-bold">${{ course.price|floatformat:2 }}</span>
+        <span class="fs-3 fw-bold">€{{ course.price|floatformat:2 }}</span>
         <small class="text-muted">One-time payment</small>
       </div>
 
