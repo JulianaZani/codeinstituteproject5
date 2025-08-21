@@ -338,4 +338,4 @@ https://stockcake.com/i/mountain-biking-action_1071215_792738 (mountainbikeskill
 https://negativespace.co/cycling-city-street/ (urbancyclingtechniques image)  
 https://www.pexels.com/photo/tired-cyclist-on-road-18424641/ (cyclingforfitness image)  
 https://www.flickr.com/photos/newcastlelibraries/4090395714 (historyandevolution image)  
-https://github.com/JulianaZani/codeinstituteproject (favicon and header background image)  
+https://github.com/JulianaZani/codeinstituteproject (favicon)  

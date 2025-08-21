@@ -5,6 +5,8 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
                Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji",
                "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background: url('/media/lightbackgroung01.webp') no-repeat center center fixed;
+  background-size: cover;             
 }
 
 .header-spacer {
