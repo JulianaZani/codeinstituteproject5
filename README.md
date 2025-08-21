@@ -314,9 +314,12 @@ This completes a **functional MVP**, where the main user flow is ready:
 
 ![register](doc/screenshots/01register.png)  
 
-- 404 error: To fix I did DEBUG setting in urls.py and I renamed the images names in thumbnails/courses/media/. 
+- 404 error: To fix I did DEBUG setting in urls.py and I renamed the images names in thumbnails/courses/media/ because in courses.json the paths thumbnails were diferent. Exemplo: _"thumbnail": "courses/thumbnails/02intermediatedrivetrain.webp" and the image was with this name: 02intermediatedrivetraintuning.webp.  
 
-![404errors](doc/screenshots/404errors.png)
+![404errors](doc/screenshots/404errors.png)  
+
+I checked every image names, I fixed what was wrong and now it's everything ok.
+
 
 ## Credits  
 [▲ Back to Top](#-table-of-contents)  
