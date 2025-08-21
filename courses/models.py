@@ -22,9 +22,7 @@ class Course(models.Model):
     category = models.CharField(max_length=50, choices=CATEGORIES)
     level = models.CharField(max_length=20, choices=LEVELS)
     duration_hours = models.PositiveIntegerField(default=0)
-    thumbnail = models.ImageField(
-        upload_to='courses/thumbnails/', blank=True, null=True
-    )
+    thumbnail = models.ImageField(upload_to="courses/thumbnails/", blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
