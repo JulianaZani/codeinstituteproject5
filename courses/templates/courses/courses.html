@@ -19,7 +19,7 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">{{ course.title }}</h5>
                 <p class="card-text text-muted mb-2">
-                  {{ course.category|title }} • {{ course.level|title }}
+                  {{ course.get_category_display }} • {{ course.get_level_display }}
                 </p>
                 <p class="fw-semibold mb-3">€{{ course.price }}</p>
                 
