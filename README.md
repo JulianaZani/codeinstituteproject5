@@ -314,21 +314,24 @@ This completes a **functional MVP**, where the main user flow is ready:
 
 ![register](doc/screenshots/01register.png)  
 
+- 404 error: To fix I did DEBUG setting in urls.py and I renamed the images names in thumbnails/courses/media/. 
+
+![404errors](doc/screenshots/404errors.png)
+
 ## Credits  
 [▲ Back to Top](#-table-of-contents)  
 
 Bootstrap website: https://getbootstrap.com/docs/5.3/utilities/spacing/  
 Images:  
-https://www.flickr.com/photos/newcastlelibraries/4090395714 (historyandevolutionofbicycles image)  
 https://stockcake.com/i/bike-repair-workshop_1353557_1077619 (basicbicyclemaintenance image)  
-https://www.rawpixel.com/image/432147/free-photo-image-bicycle-chain-bike (intermediatedrivetraintuning image)  
-https://www.flickr.com/photos/yersinia/2695698832 (advancedwheeltruinghubs image)  
-https://commons.wikimedia.org/wiki/File:EP8_Trekking_%2831%29.jpg (ebikesystemsfundamentals image)  
-https://www.renehersecycles.com/disc-brake-pros-and-cons/ (hydraulicbrakesmasterclass image)  
-https://pixnio.com/pt/media/freio-equipamentos-capacete-bicicleta-de-montanha-profissional (cyclingsafetyfirstaid image)  
+https://www.rawpixel.com/image/432147/free-photo-image-bicycle-chain-bike (intermediatedrivetrain image)  
+https://www.flickr.com/photos/yersinia/2695698832 (advancedwheeltruing image)  
+https://commons.wikimedia.org/wiki/File:EP8_Trekking_%2831%29.jpg (ebikesystems image)  
+https://www.renehersecycles.com/disc-brake-pros-and-cons/ (hydraulicbrakes image)  
+https://pixnio.com/pt/media/freio-equipamentos-capacete-bicicleta-de-montanha-profissional (cyclingsafety image)  
 https://www.ultraebikes.com/pages/build-bike-velofix?srsltid=AfmBOoouMRY5b5yEL0VkN3SU_pYBQ8XSHYj3W0-scKr_wfD3rHvSLkpz (bikefitessentials image)  
-https://garystockbridge617.getarchive.net/amp/media/bike-game-riding-food-drink-5a0612 (cyclingnutritionhydration image)  
-https://stockcake.com/i/mountain-biking-action_1071215_792738 (mountainbikeskillsdevelopment image)  
+https://garystockbridge617.getarchive.net/amp/media/bike-game-riding-food-drink-5a0612 (cyclingnutrition image)  
+https://stockcake.com/i/mountain-biking-action_1071215_792738 (mountainbikeskills image)  
 https://negativespace.co/cycling-city-street/ (urbancyclingtechniques image)  
 https://www.pexels.com/photo/tired-cyclist-on-road-18424641/ (cyclingforfitness image)  
-https://www.flickr.com/photos/newcastlelibraries/4090395714 (historyandevolutionofbicycles image)  
+https://www.flickr.com/photos/newcastlelibraries/4090395714 (historyandevolution image)  
