@@ -2,15 +2,6 @@
 {% load static %}
 
 {% block content %}
-  <!-- Breadcrumb -->
-  <nav aria-label="breadcrumb" class="mb-4">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'courses:list' %}">Courses</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{ course.title }}</li>
-    </ol>
-  </nav>
-
   <div class="row g-4 align-items-start">
     <!-- Course Image -->
     <div class="col-12 col-lg-6">
