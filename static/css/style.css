@@ -63,7 +63,13 @@ h1.display-4 {
 .search-form {
   width: 100%;
   max-width: 420px;
-}  
+}
+
+/* Badge primary */
+.badge.text-bg-primary {
+  background-color: rgb(5, 5, 82) !important;
+  color: #fff !important;
+}
 
 /* Images */
 .card .card-img-top {
@@ -76,6 +82,7 @@ h1.display-4 {
   overflow: hidden;
 }
 
+/* Responsive Design */
 @media (max-width: 767.98px) {
   .search-form { max-width: 100%; }
 }
