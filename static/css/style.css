@@ -9,11 +9,11 @@ body {
   background-size: cover;             
 }
 
+/* Headings */
 .header-spacer {
   height: 4.5rem;
 }
 
-/* Headings */
 h1.display-4 {
   font-size: 3rem;
   font-weight: 500;
@@ -53,6 +53,18 @@ h1.display-4 {
   border-color: rgb(5, 5, 82);
 }
 
+.search-btn {
+  background-color: rgb(234, 235, 237);
+  color: rgb(5, 5, 82);
+  border: #fff;
+}
+
+/* Search Form */
+.search-form {
+  width: 100%;
+  max-width: 420px;
+}  
+
 /* Images */
 .card .card-img-top {
   width: 100%;
@@ -62,4 +74,8 @@ h1.display-4 {
 
 .card.h-100 {
   overflow: hidden;
+}
+
+@media (max-width: 767.98px) {
+  .search-form { max-width: 100%; }
 }

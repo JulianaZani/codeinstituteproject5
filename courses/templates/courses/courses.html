@@ -3,7 +3,26 @@
 
 {% block content %}
   <div class="container mt-5">
-    <h1 class="all-courses-title mb-4">All Courses</h1>
+    <div class="row align-items-center mb-4 g-2">
+      <div class="col-12 col-md-6">
+        <h1 class="all-courses-title m-0">All Courses</h1>
+      </div>
+
+      <div class="col-12 col-md-6 d-flex justify-content-md-end">
+        <form action="{% url 'courses:list' %}" method="get" role="search" class="search-form w-100">
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control"
+              name="q"
+              placeholder="Search courses..."
+              value="{{ request.GET.q|default:'' }}"
+              aria-label="Search courses">
+            <button class="search-btn btn btn-outline-primary" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     {% if courses %}
       <div class="row g-4">
