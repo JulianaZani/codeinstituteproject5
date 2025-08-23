@@ -1,12 +1,20 @@
 html, body { height: 100%; }
 
 body {
-  color: rgb(5, 5, 82);
+  color: rgba(5, 5, 82, 1);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
                Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji",
                "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   background: url('/media/lightbackgroung.webp') no-repeat center center fixed;
   background-size: cover;             
+}
+
+/* Course Details Box */
+.course-details-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(5, 5, 82, 0.1);
 }
 
 /* Headings */
@@ -17,46 +25,46 @@ body {
 h1.display-4 {
   font-size: 3rem;
   font-weight: 500;
-  color: rgb(5, 5, 82);
+  color: rgba(5, 5, 82, 1);
 }
 
 .all-courses-title {
   font-size: 2.6rem;
   font-weight: 650;
-  color: rgb(5, 5, 82);
+  color: rgba(5, 5, 82, 1);
   padding-bottom: 1.5rem;
 }
 
 /* Buttons */
 .all-courses-button {
-  background: #000 !important;
-  color: #fff !important;
-  border: 1px solid #000;
+  background: rgba(0, 0, 0, 1) !important;
+  color: rgba(255, 255, 255, 1) !important;
+  border: 1px solid rgba(0, 0, 0, 1);
   transition: all .15s ease-in-out;
 }
 
 .all-courses-button:hover,
 .all-courses-button:focus {
-  background: #fff !important;
-  color: rgb(5, 5, 82) !important;
-  border: 1px solid rgb(5, 5, 82);
+  background: rgba(255, 255, 255, 1) !important;
+  color: rgba(5, 5, 82, 1) !important;
+  border: 1px solid rgba(5, 5, 82, 1);
 }
 
 .btn-outline-primary {
-  color: rgb(5, 5, 82);
+  color: rgba(5, 5, 82, 1);
 }
 
 .btn-outline-primary:hover,
 .btn-outline-primary:focus {
-  background-color: rgb(5, 5, 82);
-  color: #fff;
-  border-color: rgb(5, 5, 82);
+  background-color: rgba(5, 5, 82, 1);
+  color: rgba(255, 255, 255, 1);
+  border-color: rgba(5, 5, 82, 1);
 }
 
 .search-btn {
-  background-color: rgb(234, 235, 237);
-  color: rgb(5, 5, 82);
-  border: #fff;
+  background-color: rgba(234, 235, 237, 1);
+  color: rgba(5, 5, 82, 1);
+  border: rgba(255, 255, 255, 1);
 }
 
 /* Search Form */
@@ -67,8 +75,8 @@ h1.display-4 {
 
 /* Badge primary */
 .badge.text-bg-primary {
-  background-color: rgb(5, 5, 82) !important;
-  color: #fff !important;
+  background-color: rgba(5, 5, 82, 1) !important;
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 /* Images */
