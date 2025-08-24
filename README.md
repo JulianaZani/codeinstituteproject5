@@ -1,6 +1,7 @@
 # CYCLEFIX ACADEMY - Bicycle Mechanics Courses E-commerce  
 
 I’ve been thinking about this project since the very beginning of my course. In fact, the favicon I chose, a blue bicycle, is the same one I used in my very first project. From the start, I’ve been preparing to create a website to host the bicycle mechanic course my husband has been developing. This website will be my gift to him.  
+Looking at my first project (https://github.com/JulianaZani/codeinstituteproject) and comparing it to this fifth project (https://github.com/JulianaZani/codeinstituteproject5) it's really cool to see my progress.  
 
 ---
 
@@ -339,3 +340,4 @@ https://negativespace.co/cycling-city-street/ (urbancyclingtechniques image)
 https://www.pexels.com/photo/tired-cyclist-on-road-18424641/ (cyclingforfitness image)  
 https://www.flickr.com/photos/newcastlelibraries/4090395714 (historyandevolution image)  
 https://github.com/JulianaZani/codeinstituteproject (favicon)  
+https://www.pexels.com/photo/a-man-is-standing-in-front-of-a-bicycle-shop-18700799/ (backgroung image)
