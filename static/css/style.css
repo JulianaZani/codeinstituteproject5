@@ -62,9 +62,8 @@ h1.display-4 {
 }
 
 .search-btn {
-  background-color: rgba(234, 235, 237, 1);
+  background-color: rgba(255, 255, 255, 1);
   color: rgba(5, 5, 82, 1);
-  border: rgba(255, 255, 255, 1);
 }
 
 /* Search Form */
