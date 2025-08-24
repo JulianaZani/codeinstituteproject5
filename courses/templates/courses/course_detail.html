@@ -40,9 +40,9 @@
         <a href="#" class="btn btn-primary btn-lg">
           <i class="fa-solid fa-cart-shopping me-2"></i>Buy this course
         </a>
-        <a href="{% url 'courses:list' %}" class="btn btn-outline-secondary btn-lg">
-          Back to Courses
-        </a>
+        {% with qs=request.GET.urlencode %}
+          <a href="{% url 'courses:list' %}{% if qs %}?{{ qs }}{% endif %}" class="btn btn-outline-secondary btn-lg">Back</a>
+        {% endwith %}
       </div>
 
       <hr class="my-4">

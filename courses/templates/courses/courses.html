@@ -143,7 +143,7 @@
                 {{ course.get_category_display }} • {{ course.get_level_display }}
               </p>
               <p class="fw-semibold mb-3">€{{ course.price }}</p>
-              <a href="{% url 'courses:detail' course.slug %}" class="btn btn-outline-primary mt-auto">View Details</a>
+              <a href="{% url 'courses:detail' course.slug %}{% if request.GET %}?{{ request.GET.urlencode }}{% endif %}"class="btn btn-outline-primary mt-auto">View Details</a>
             </div>
           </div>
         </div>
