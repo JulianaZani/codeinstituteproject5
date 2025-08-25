@@ -8,7 +8,7 @@
   <div class="row align-items-center mb-3 g-2">
     <div class="col-12 col-lg-5">
       <h1 class="all-courses-title m-0">All Courses</h1>
-      <small class="text-muted">{{ courses|length }} result{{ courses|length|pluralize }}</small>
+      <small class="text-black">{{ courses|length }} result{{ courses|length|pluralize }}</small>
     </div>
 
     <!-- Search + Filters button -->
@@ -34,7 +34,7 @@
   <!-- Active filters chips -->
   {% if q or selected_categories or selected_levels or price_min or price_max %}
     <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
-      <span class="text-muted me-1">Active:</span>
+      <span class="text-black me-1">Active:</span>
 
       {% if q %}
         <span class="badge text-bg-light border">Keyword: “{{ q }}”</span>
