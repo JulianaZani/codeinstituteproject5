@@ -6,15 +6,17 @@ from .cart import Cart
 
 
 def cart_detail(request):
-    """Render the cart page with current session cart contents."""
     cart = Cart(request)
     return render(request, "cart/cart.html", {"cart": cart})
 
 @require_POST
 def add_to_cart(request, course_id):
-    """Add a course to the cart (stored in session)."""
     cart = Cart(request)
     course = get_object_or_404(Course, id=course_id)
+
+    if not course.is_active and not request.user.is_staff:
+        messages.error(request, f'"{course.title}" is not available at the moment.')
+        return redirect(request.META.get("HTTP_REFERER", "cart:detail"))
 
     qty = request.POST.get("quantity", "1")
     try:
@@ -25,12 +27,10 @@ def add_to_cart(request, course_id):
 
     cart.add(course_id=course.id, quantity=qty)
     messages.success(request, f'"{course.title}" was added to your cart.')
-    # Send the user back to where they came from, or to the cart page.
     return redirect(request.META.get("HTTP_REFERER", "cart:detail"))
 
 @require_POST
 def remove_from_cart(request, course_id):
-    """Remove a course from the cart."""
     cart = Cart(request)
     course = get_object_or_404(Course, id=course_id)
     cart.remove(course_id=course.id)
