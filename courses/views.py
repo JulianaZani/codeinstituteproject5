@@ -14,20 +14,18 @@ def _to_decimal(value):
 
 
 def course_list(request):
-    qs = Course.objects.all()
+    base_qs = Course.objects.all() if request.user.is_staff else Course.objects.filter(is_active=True)
+    qs = base_qs
 
-    # Read query params
     q = (request.GET.get("q") or "").strip()
-    selected_categories = request.GET.getlist("category")  # precompute for template
-    selected_levels = request.GET.getlist("level")         # precompute for template
+    selected_categories = request.GET.getlist("category")
+    selected_levels = request.GET.getlist("level")
     price_min = _to_decimal(request.GET.get("price_min"))
     price_max = _to_decimal(request.GET.get("price_max"))
 
-    # Keyword search
     if q:
         qs = qs.filter(Q(title__icontains=q) | Q(description__icontains=q))
 
-    # Filters (combinable)
     if selected_categories:
         qs = qs.filter(category__in=selected_categories)
 
@@ -42,12 +40,10 @@ def course_list(request):
 
     context = {
         "courses": qs,
-        "category_choices": Course.CATEGORIES,   # your choices
-        "level_choices": Course.LEVELS,          # your choices
-        # expose selected values so the template can check them (no method calls)
+        "category_choices": Course.CATEGORIES,
+        "level_choices": Course.LEVELS,
         "selected_categories": selected_categories,
         "selected_levels": selected_levels,
-        # also echo raw values to persist inputs
         "q": q,
         "price_min": request.GET.get("price_min", ""),
         "price_max": request.GET.get("price_max", ""),
@@ -56,5 +52,8 @@ def course_list(request):
 
 
 def course_detail(request, slug):
-    course = get_object_or_404(Course, slug=slug)
+    if request.user.is_staff:
+        course = get_object_or_404(Course, slug=slug)
+    else:
+        course = get_object_or_404(Course, slug=slug, is_active=True)
     return render(request, "courses/course_detail.html", {"course": course})
