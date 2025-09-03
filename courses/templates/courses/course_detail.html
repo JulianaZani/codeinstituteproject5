@@ -36,10 +36,14 @@
       </div>
 
       <div class="d-flex flex-wrap gap-2">
-        <!-- Adjust this href once your checkout/cart view is ready -->
-        <a href="#" class="btn btn-primary btn-lg">
-          <i class="fa-solid fa-cart-shopping me-2"></i>Buy this course
-        </a>
+        <form method="post" action="{% url 'cart:add' course.id %}">
+          {% csrf_token %}
+          <input type="hidden" name="quantity" value="1">
+          <button class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-cart-shopping me-2"></i>Add to Cart
+          </button>
+        </form>
+
         {% with qs=request.GET.urlencode %}
           <a href="{% url 'courses:list' %}{% if qs %}?{{ qs }}{% endif %}" class="btn btn-outline-secondary btn-lg">Back</a>
         {% endwith %}

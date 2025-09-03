@@ -36,7 +36,7 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a></li>
                 <li class="nav-item ms-lg-3">
-                  <a class="nav-link position-relative" href="#">
+                  <a class="nav-link position-relative" href="{% url 'cart:detail' %}">
                     <i class="fas fa-shopping-bag"></i>
                     {% if grand_total %}
                       <span class="ms-1">${{ grand_total|floatformat:2 }}</span>
