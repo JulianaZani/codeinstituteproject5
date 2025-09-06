@@ -39,9 +39,9 @@
                   <a class="nav-link position-relative" href="{% url 'cart:detail' %}">
                     <i class="fas fa-shopping-bag"></i>
                     {% if grand_total %}
-                      <span class="ms-1">${{ grand_total|floatformat:2 }}</span>
+                      <span class="ms-1">€{{ grand_total|floatformat:2 }}</span>
                     {% else %}
-                      <span class="ms-1">$0.00</span>
+                      <span class="ms-1">€0.00</span>
                     {% endif %}
                   </a>
                 </li>
