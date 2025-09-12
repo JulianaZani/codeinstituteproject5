@@ -52,8 +52,17 @@ def course_list(request):
 
 
 def course_detail(request, slug):
-    if request.user.is_staff:
-        course = get_object_or_404(Course, slug=slug)
-    else:
-        course = get_object_or_404(Course, slug=slug, is_active=True)
-    return render(request, "courses/course_detail.html", {"course": course})
+    base_qs = Course.objects.all() if request.user.is_staff else Course.objects.filter(is_active=True)
+
+    course = get_object_or_404(base_qs, slug=slug)
+
+    related_courses = (
+        base_qs.filter(category=course.category)
+               .exclude(pk=course.pk)[:3]
+    )
+
+    return render(
+        request,
+        "courses/course_detail.html",
+        {"course": course, "related_courses": related_courses},
+    )

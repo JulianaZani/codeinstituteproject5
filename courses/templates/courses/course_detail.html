@@ -59,27 +59,33 @@
     </div>
   </div>
 
-  {# Optional: Related courses
   <hr class="my-5">
   <h2 class="h4 mb-3">You may also like</h2>
-  <div class="row g-3">
-    {% for similar in related_courses %}
-      <div class="col-12 col-sm-6 col-md-4">
-        <a href="{% url 'courses:detail' similar.slug %}" class="text-decoration-none">
-          <div class="card h-100">
-            {% if similar.thumbnail %}
-              <img src="{{ similar.thumbnail.url }}" class="card-img-top" alt="{{ similar.title }}">
-            {% else %}
-              <img src="{% static 'images/default-course.jpg' %}" class="card-img-top" alt="">
-            {% endif %}
-            <div class="card-body">
-              <h5 class="card-title mb-1">{{ similar.title }}</h5>
-              <small class="text-muted">{{ similar.get_category_display }} • {{ similar.get_level_display }}</small>
+
+  {% if related_courses %}
+    <div class="row g-3">
+      {% for similar in related_courses %}
+        <div class="col-12 col-sm-6 col-md-4">
+          <a href="{% url 'courses:detail' similar.slug %}" class="text-decoration-none">
+            <div class="card h-100">
+              {% if similar.thumbnail %}
+                <img src="{{ similar.thumbnail.url }}" class="card-img-top" alt="{{ similar.title }}">
+              {% else %}
+                <img src="{% static 'images/default-course.jpg' %}" class="card-img-top" alt="{{ similar.title }}">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title mb-1">{{ similar.title }}</h5>
+                <small class="text-muted">
+                  {{ similar.get_category_display }} • {{ similar.get_level_display }}
+                </small>
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-    {% endfor %}
-  </div>
-  #}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-muted">No related courses found.</p>
+  {% endif %}
+
 {% endblock content %}
