@@ -46,6 +46,10 @@
 
   <div class="d-flex gap-2">
     <a href="{% url 'courses:list' %}" class="btn btn-outline-secondary">Continue shopping</a>
+    <form action="{% url 'cart:clear' %}" method="post" onsubmit="return confirm('Empty your cart?');" class="d-inline">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-secondary">Empty cart</button>
+    </form>
     <a href="#" class="btn btn-dark text-white">Checkout (coming soon)</a>
   </div>
 {% endif %}

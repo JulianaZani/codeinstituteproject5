@@ -32,3 +32,11 @@ def remove_from_cart(request, course_id):
     cart.remove(course_id=course.id)
     messages.info(request, f'"{course.title}" was removed from your cart.')
     return redirect("cart:detail")
+
+
+@require_POST
+def clear_cart(request):
+    cart = Cart(request)
+    cart.clear()
+    messages.success(request, "Your cart has been emptied.")
+    return redirect("cart:detail")
