@@ -22,17 +22,18 @@
           value="{{ q|default:'' }}"
           aria-label="Search courses">
         <button class="search-btn btn btn-outline-primary" type="submit">Search</button>
+
         <!-- Filters button triggers offcanvas -->
         <button class="btn btn-primary" type="button"
                 data-bs-toggle="offcanvas" data-bs-target="#filtersOffcanvas" aria-controls="filtersOffcanvas">
-          Filters
+          Filters &amp; Sort
         </button>
       </form>
     </div>
   </div>
 
   <!-- Active filters chips -->
-  {% if q or selected_categories or selected_levels or price_min or price_max %}
+  {% if q or selected_categories or selected_levels or price_min or price_max or current_sort %}
     <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
       <span class="text-black me-1">Active:</span>
 
@@ -55,6 +56,18 @@
       {% if price_min %}<span class="badge text-bg-light border">Min €{{ price_min }}</span>{% endif %}
       {% if price_max %}<span class="badge text-bg-light border">Max €{{ price_max }}</span>{% endif %}
 
+      {% if current_sort %}
+        <span class="badge text-bg-light border">
+          Sort:
+          {% if current_sort == "title" %}Title (A–Z){% endif %}
+          {% if current_sort == "-title" %}Title (Z–A){% endif %}
+          {% if current_sort == "price" %}Price (low → high){% endif %}
+          {% if current_sort == "-price" %}Price (high → low){% endif %}
+          {% if current_sort == "duration_hours" %}Duration (short → long){% endif %}
+          {% if current_sort == "-duration_hours" %}Duration (long → short){% endif %}
+        </span>
+      {% endif %}
+
       <a class="btn btn-sm btn-outline-secondary ms-1" href="{% url 'courses:list' %}">Clear all</a>
     </div>
   {% endif %}
@@ -62,11 +75,32 @@
   <!-- Offcanvas Filters -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="filtersOffcanvas" aria-labelledby="filtersOffcanvasLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="filtersOffcanvasLabel">Filters</h5>
+      <h5 class="offcanvas-title" id="filtersOffcanvasLabel">Filters &amp; Sort</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <form action="{% url 'courses:list' %}" method="get" class="d-grid gap-4">
+
+        <!-- Sort -->
+        <div>
+          <label class="form-label d-block">Sort</label>
+          <select name="sort" class="form-select">
+            <option value="" {% if not current_sort %}selected{% endif %}>Default</option>
+
+            <!-- Title -->
+            <option value="title" {% if current_sort == "title" %}selected{% endif %}>Title (A–Z)</option>
+            <option value="-title" {% if current_sort == "-title" %}selected{% endif %}>Title (Z–A)</option>
+
+            <!-- Price -->
+            <option value="price" {% if current_sort == "price" %}selected{% endif %}>Price (low → high)</option>
+            <option value="-price" {% if current_sort == "-price" %}selected{% endif %}>Price (high → low)</option>
+
+            <!-- Duration -->
+            <option value="duration_hours" {% if current_sort == "duration_hours" %}selected{% endif %}>Duration (short → long)</option>
+            <option value="-duration_hours" {% if current_sort == "-duration_hours" %}selected{% endif %}>Duration (long → short)</option>
+          </select>
+          <small class="text-muted d-block mt-1">Choose the sort order; it will be applied along with the filters.</small>
+        </div>
 
         <!-- Keep keyword so it persists when opening filters -->
         <div>
@@ -143,7 +177,8 @@
                 {{ course.get_category_display }} • {{ course.get_level_display }}
               </p>
               <p class="fw-semibold mb-3">€{{ course.price }}</p>
-              <a href="{% url 'courses:detail' course.slug %}{% if request.GET %}?{{ request.GET.urlencode }}{% endif %}"class="btn btn-outline-primary mt-auto">View Details</a>
+              <a href="{% url 'courses:detail' course.slug %}{% if request.GET %}?{{ request.GET.urlencode }}{% endif %}"
+                 class="btn btn-outline-primary mt-auto">View Details</a>
             </div>
           </div>
         </div>
@@ -151,7 +186,7 @@
     </div>
   {% else %}
     <p class="text-center text-muted mt-4">
-      {% if q or selected_categories or selected_levels or price_min or price_max %}
+      {% if q or selected_categories or selected_levels or price_min or price_max or current_sort %}
         No results for current filters. <a href="{% url 'courses:list' %}">Clear filters</a>
       {% else %}
         No courses available at the moment.

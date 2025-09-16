@@ -38,6 +38,18 @@ def course_list(request):
     if price_max is not None:
         qs = qs.filter(price__lte=price_max)
 
+    sort = (request.GET.get("sort") or "").strip()
+    allowed_sorts = {
+        "title": "title",
+        "-title": "-title",
+        "price": "price",
+        "-price": "-price",
+        "duration_hours": "duration_hours",
+        "-duration_hours": "-duration_hours",
+    }
+    if sort in allowed_sorts:
+        qs = qs.order_by(allowed_sorts[sort])
+
     context = {
         "courses": qs,
         "category_choices": Course.CATEGORIES,
@@ -47,13 +59,13 @@ def course_list(request):
         "q": q,
         "price_min": request.GET.get("price_min", ""),
         "price_max": request.GET.get("price_max", ""),
+        "current_sort": sort,
     }
     return render(request, "courses/courses.html", context)
 
 
 def course_detail(request, slug):
     base_qs = Course.objects.all() if request.user.is_staff else Course.objects.filter(is_active=True)
-
     course = get_object_or_404(base_qs, slug=slug)
 
     related_courses = (
