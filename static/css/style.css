@@ -93,6 +93,16 @@ h1.display-4 {
   overflow: hidden;
 }
 
+/* Toasts */
+.toast-container {
+    z-index: 1100;
+    max-width: min(92vw, 380px);
+}
+
+.custom-toast .toast-header {
+    font-weight: 600;
+}
+
 /* Responsive Design */
 @media (max-width: 767.98px) {
   .search-form { max-width: 100%; }
