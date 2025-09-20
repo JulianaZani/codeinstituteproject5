@@ -11,10 +11,11 @@ Looking at my first project (https://github.com/JulianaZani/codeinstituteproject
    -[General planning](#general-planning)  
    -[User stories](#user-stories)  
    -[MVP](#mvp)  
-2. [Deployment](#deployment)   
-3. [Security](#security)     
-4. [Bugs](#bugs)  
-5. [Credits](#credits)  
+2. [Features](#features)
+3. [Deployment](#deployment)   
+4. [Security](#security)     
+5. [Bugs](#bugs)  
+6. [Credits](#credits)  
 
 ## Planning  
 [▲ Back to Top](#-table-of-contents)
@@ -296,6 +297,19 @@ This completes a **functional MVP**, where the main user flow is ready:
 1. **US-03 – User Profile** *(Should, 2 SP)*
 2. **US-05 – Search and Filters** *(Must, 5 SP)*
 3. **US-12 – Course CRUD (Basic)** *(Should, 8 SP)*
+
+---
+
+## Features  
+[▲ Back to Top](#-table-of-contents)  
+
+Toast Notifications  
+To provide clear and immediate user feedback across the application, I implemented Bootstrap Toasts in combination with Django’s built-in messages framework.  
+Authentication & Accounts (django-allauth)
+
+Authentication & Accounts (django-allauth)  
+This project uses django-allauth to provide a secure, production-ready authentication system with email verification and password management.
+
 
 ---
 
