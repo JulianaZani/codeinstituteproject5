@@ -1,0 +1,12 @@
+<div class="toast custom-toast mb-2"
+     role="status" aria-live="polite" aria-atomic="true"
+     data-bs-autohide="true" data-bs-delay="2500">
+  <div class="toast-header bg-success text-white">
+    <strong class="me-auto">Success</strong>
+    <button type="button" class="btn-close btn-close-white ms-2 mb-1"
+            data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    {{ message|safe }}
+  </div>
+</div>

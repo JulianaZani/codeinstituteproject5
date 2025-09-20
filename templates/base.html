@@ -17,6 +17,11 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+      <style>
+        /* Small polish for toasts */
+        .toast-container { max-width: min(92vw, 380px); z-index: 1100; }
+        .custom-toast .toast-header { font-weight: 600; }
+      </style>
     {% endblock corecss %}
     {% block extracss %}{% endblock extracss %}
   </head>
@@ -54,16 +59,35 @@
 
     <div class="header-spacer"></div>
 
-    {% if messages %}
-      <div class="container mt-3">
+    {# --- Toasts (replaces the old alert block) --- #}
+    <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3">
+      {% if messages %}
         {% for message in messages %}
-          <div class="alert alert-{{ message.tags|default:'info' }} alert-dismissible fade show" role="alert">
-            {{ message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
+          {% if 'success' in message.tags %}
+            {% include "includes/toasts/toast_success.html" %}
+          {% elif 'info' in message.tags %}
+            {% include "includes/toasts/toast_info.html" %}
+          {% elif 'warning' in message.tags %}
+            {% include "includes/toasts/toast_warning.html" %}
+          {% elif 'error' in message.tags or 'danger' in message.tags %}
+            {% include "includes/toasts/toast_error.html" %}
+          {% endif %}
         {% endfor %}
+      {% endif %}
+    </div>
+
+    {# Fallback for users with JS disabled #}
+    <noscript>
+      <div class="container mt-3">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags|default:'info' }}" role="alert">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
       </div>
-    {% endif %}
+    </noscript>
 
     <main class="container py-4">
       {% block content %}{% endblock content %}
@@ -72,7 +96,19 @@
     {% block corejs %}
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     {% endblock corejs %}
-    {% block extrajs %}{% endblock extrajs %}
+
+    {% block extrajs %}
+      <script>
+        (function () {
+          const nodes = document.querySelectorAll('#toast-container .toast');
+          nodes.forEach(function (el) {
+            try {
+              const t = new bootstrap.Toast(el);
+              t.show();
+            } catch (e) {}
+          });
+        })();
+      </script>
+    {% endblock extrajs %}
   </body>
-  
 </html>
