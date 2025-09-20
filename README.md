@@ -11,7 +11,7 @@ Looking at my first project (https://github.com/JulianaZani/codeinstituteproject
    -[General planning](#general-planning)  
    -[User stories](#user-stories)  
    -[MVP](#mvp)  
-2. [Features](#features)
+2. [Features](#features)  
 3. [Deployment](#deployment)   
 4. [Security](#security)     
 5. [Bugs](#bugs)  
