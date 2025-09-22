@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'courses',
     'cart',
     'checkout',
+    'enrollments',
 ]
 
 SITE_ID = 1
