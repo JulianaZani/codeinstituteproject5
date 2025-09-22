@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'enrollments',
+    'payments',
 ]
 
 SITE_ID = 1
@@ -170,3 +171,8 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',   # map ERROR -> 'danger' (Bootstrap class)
 }
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+# --- Payments / Stripe ---
+STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLISHABLE_KEY", "")
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "")
+STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "")
