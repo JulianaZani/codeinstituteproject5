@@ -50,7 +50,7 @@
       {% csrf_token %}
       <button type="submit" class="btn btn-outline-secondary">Empty cart</button>
     </form>
-    <a href="#" class="btn btn-dark text-white">Checkout (coming soon)</a>
+    <a class="btn btn-primary" href="{% url 'checkout:checkout' %}">Proceed to checkout</a>
   </div>
 {% endif %}
 {% endblock %}
