@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6 text-center">
+      <h1 class="mb-3">Thank you!</h1>
+      <p>Your order <strong>{{ order_number }}</strong> was received.</p>
+      <a class="btn btn-primary mt-3" href="/">Back to Home</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
