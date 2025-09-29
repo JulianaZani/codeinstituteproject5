@@ -1,31 +1,63 @@
-from decimal import Decimal
-from checkout.models import Order, OrderLineItem, Coupon
-from checkout.services import choose_tax_rate
-from courses.models import Course
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.db import transaction
+from .forms import OrderForm
+from .models import Order, OrderLineItem, Coupon
+from .services import choose_tax_rate
+from cart.cart import Cart
 
-def create_order_from_cart(request):
-    user = request.user if request.user.is_authenticated else None
-    billing_country = request.POST.get("billing_country", "IE")
-    coupon_code = request.POST.get("coupon", "").strip().upper() or None
 
-    order = Order.objects.create(
-        user=user,
-        full_name=request.POST.get("full_name", "Customer"),
-        email=request.POST.get("email", "customer@example.com"),
-        billing_address=request.POST.get("billing_address", ""),
-        billing_city=request.POST.get("billing_city", ""),
-        billing_country=billing_country,
-        tax_rate=choose_tax_rate(billing_country),
-    )
+def checkout_view(request):
+    cart = Cart(request)
+    if len(cart) == 0:
+        messages.info(request, "Your cart is empty.")
+        return redirect("cart:detail")
 
-    course = Course.objects.get(pk=request.POST["course_id"])
-    OrderLineItem.objects.create(order=order, course=course, quantity=1, unit_price=course.price)
+    if request.method == "POST":
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            user = request.user if request.user.is_authenticated else None
+            billing_country = data["billing_country"] or "IE"
 
-    if coupon_code:
-        try:
-            order.coupon = Coupon.objects.get(code=coupon_code, active=True)
-        except Coupon.DoesNotExist:
-            pass
-        order.save()
+            with transaction.atomic():
+                order = Order.objects.create(
+                    user=user,
+                    full_name=data["full_name"],
+                    email=data["email"],
+                    billing_address=data["billing_address"],
+                    billing_city=data["billing_city"],
+                    billing_country=billing_country,
+                    tax_rate=choose_tax_rate(billing_country),
+                )
 
-    return order
+                for item in cart:
+                    course = item["course"]
+                    quantity = item["quantity"]
+                    unit_price = item["price"]
+                    OrderLineItem.objects.create(
+                        order=order,
+                        course=course,
+                        quantity=quantity,
+                        unit_price=unit_price,
+                    )
+
+                coupon_code = (data.get("coupon") or "").strip().upper()
+                if coupon_code:
+                    try:
+                        order.coupon = Coupon.objects.get(code=coupon_code, active=True)
+                        order.save()
+                    except Coupon.DoesNotExist:
+                        messages.warning(request, "Coupon not found or inactive.")
+
+            cart.clear()
+            messages.success(request, "Order created successfully!")
+            return redirect("checkout:success", order_number=order.order_number)
+    else:
+        form = OrderForm()
+
+    return render(request, "checkout/checkout.html", {"form": form, "cart": cart})
+
+
+def checkout_success(request, order_number):
+    return render(request, "checkout/checkout_success.html", {"order_number": order_number})
