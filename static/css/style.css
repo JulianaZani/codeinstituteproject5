@@ -95,15 +95,30 @@ h1.display-4 {
 
 /* Toasts */
 .toast-container {
-    z-index: 1100;
+    position: fixed;
+    top: auto !important;
+    left: auto !important;
+    bottom: 1rem !important;
+    right: 1rem !important;
+    z-index: 2000;
     max-width: min(92vw, 380px);
+    pointer-events: none;
 }
 
-.custom-toast .toast-header {
-    font-weight: 600;
+.toast-container .toast {
+    pointer-events: auto;
+    margin-top: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 }
 
 /* Responsive Design */
 @media (max-width: 767.98px) {
-  .search-form { max-width: 100%; }
+  .search-form { 
+    max-width: 100%; 
+  }
+  .toast-container {
+    right: 50% !important;
+    transform: translateX(50%);
+    width: calc(100vw - 2rem);
+  }
 }
