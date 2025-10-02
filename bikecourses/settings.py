@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
+    "crispy_forms",
+    "crispy_bootstrap5",
+
     'home',
     'courses',
     'cart',
@@ -85,6 +88,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'cart.context_processors.cart_context',
+            ],
+            "builtins": [
+                "crispy_forms.templatetags.crispy_forms_tags",
+                "crispy_forms.templatetags.crispy_forms_field",
             ],
         },
     },
@@ -168,7 +175,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 # --- Messages (for Bootstrap toasts) ---
 MESSAGE_TAGS = {
-    messages.ERROR: 'danger',   # map ERROR -> 'danger' (Bootstrap class)
+    messages.ERROR: 'danger',
 }
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
@@ -176,3 +183,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLISHABLE_KEY", "")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "")
 STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "")
+
+# --- Crispy Forms ---
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
