@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container my-5">
@@ -10,41 +11,7 @@
       <form method="post" action="{% url 'checkout:checkout' %}">
         {% csrf_token %}
 
-        {% if form.non_field_errors %}
-          <div class="alert alert-danger">
-            {{ form.non_field_errors }}
-          </div>
-        {% endif %}
-
-        <div class="mb-3">
-          {{ form.full_name }}
-          {{ form.full_name.errors }}
-        </div>
-
-        <div class="mb-3">
-          {{ form.email }}
-          {{ form.email.errors }}
-        </div>
-
-        <div class="mb-3">
-          {{ form.billing_address }}
-          {{ form.billing_address.errors }}
-        </div>
-
-        <div class="mb-3">
-          {{ form.billing_city }}
-          {{ form.billing_city.errors }}
-        </div>
-
-        <div class="mb-3">
-          {{ form.billing_country }}
-          {{ form.billing_country.errors }}
-        </div>
-
-        <div class="mb-3">
-          {{ form.coupon }}
-          {{ form.coupon.errors }}
-        </div>
+        {{ form|crispy }}
 
         <button type="submit" class="btn btn-primary w-100">
           Complete Purchase
