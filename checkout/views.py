@@ -50,9 +50,8 @@ def checkout_view(request):
                     except Coupon.DoesNotExist:
                         messages.warning(request, "Coupon not found or inactive.")
 
-            cart.clear()
-            messages.success(request, "Order created successfully!")
-            return redirect("checkout:success", order_number=order.order_number)
+            messages.success(request, "Order created. Please complete the payment.")
+            return redirect("payments:pay", order_number=order.order_number)
     else:
         form = OrderForm()
 
@@ -60,4 +59,6 @@ def checkout_view(request):
 
 
 def checkout_success(request, order_number):
+    cart = Cart(request)
+    cart.clear()
     return render(request, "checkout/checkout_success.html", {"order_number": order_number})
