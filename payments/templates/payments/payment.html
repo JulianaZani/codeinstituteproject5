@@ -25,7 +25,7 @@
                   <li class="list-group-item d-flex justify-content-between align-items-start">
                     <div class="me-3">
                       <div class="fw-semibold">{{ item.course.title|default:item.course }}</div>
-                      <small class="text-muted">Qty: {{ item.quantity }} · €{{ item.unit_price|floatformat:2 }}</small>
+                      <small class="text-muted">€{{ item.unit_price|floatformat:2 }}</small>
                     </div>
                     <div class="text-end">
                       <span>€{{ item.line_total|floatformat:2 }}</span>
