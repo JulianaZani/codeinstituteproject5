@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extratitle %} · Payment{% endblock extratitle %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8 col-xl-7">
+
+      <h1 class="h3 mb-3">Complete your payment</h1>
+      <p class="text-muted mb-4">
+        Order <strong>#{{ order.order_number }}</strong>. Review your order details and pay securely via Stripe.
+      </p>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-md-7">
+              <h2 class="h5 mb-3">Order summary</h2>
+
+              {% if order.lineitems.all %}
+              <ul class="list-group list-group-flush mb-3">
+                {% for item in order.lineitems.all %}
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="me-3">
+                      <div class="fw-semibold">{{ item.course.title|default:item.course }}</div>
+                      <small class="text-muted">Qty: {{ item.quantity }} · €{{ item.unit_price|floatformat:2 }}</small>
+                    </div>
+                    <div class="text-end">
+                      <span>€{{ item.line_total|floatformat:2 }}</span>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+              <dl class="row mb-0">
+                <dt class="col-7 text-muted">Subtotal</dt>
+                <dd class="col-5 text-end">€{{ order.subtotal|floatformat:2 }}</dd>
+
+                <dt class="col-7 text-muted">Discount</dt>
+                <dd class="col-5 text-end">- €{{ order.discount_amount|floatformat:2 }}</dd>
+
+                <dt class="col-7 text-muted">Taxes ({{ order.tax_rate|floatformat:2 }}%)</dt>
+                <dd class="col-5 text-end">€{{ order.tax_amount|floatformat:2 }}</dd>
+
+                <dt class="col-7 fw-semibold">Total</dt>
+                <dd class="col-5 fw-semibold text-end">€{{ order.total|floatformat:2 }}</dd>
+              </dl>
+            </div>
+
+            <div class="col-12 col-md-5 mt-4 mt-md-0">
+              <h2 class="h5 mb-3">Pay by card</h2>
+
+              <form id="payment-form">
+                <div id="payment-element" class="mb-3"></div>
+
+                <div id="payment-message" class="alert alert-danger d-none" role="alert"></div>
+
+                <button id="submit" class="btn btn-primary w-100" type="submit">
+                  <span id="button-text">Pay €{{ order.total|floatformat:2 }}</span>
+                  <span id="spinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
+                </button>
+
+                <p class="small text-muted mt-2 mb-0">
+                  Payment processed securely by Stripe.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="{% url 'cart:detail' %}" class="btn btn-outline-secondary">Back to cart</a>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block extrajs %}
+{{ block.super }}
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+(function () {
+  const stripe = Stripe("{{ stripe_publishable_key }}");
+  const clientSecret = "{{ client_secret }}";
+  const elements = stripe.elements({ clientSecret });
+  const paymentElement = elements.create("payment");
+  paymentElement.mount("#payment-element");
+
+  const form = document.getElementById("payment-form");
+  const submitBtn = document.getElementById("submit");
+  const spinner = document.getElementById("spinner");
+  const messageEl = document.getElementById("payment-message");
+
+  function setLoading(loading) {
+    if (loading) {
+      submitBtn.setAttribute("disabled", "true");
+      spinner.classList.remove("d-none");
+    } else {
+      submitBtn.removeAttribute("disabled");
+      spinner.classList.add("d-none");
+    }
+  }
+
+  function showMessage(msg) {
+    messageEl.textContent = msg || "";
+    if (msg) {
+      messageEl.classList.remove("d-none");
+    } else {
+      messageEl.classList.add("d-none");
+    }
+  }
+
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    showMessage("");
+    setLoading(true);
+
+    try {
+      const { error, paymentIntent } = await stripe.confirmPayment({
+        elements,
+        redirect: "if_required",
+        confirmParams: {
+          return_url: "{{ request.build_absolute_uri|default:'' }}"
+        }
+      });
+
+      if (error) {
+        showMessage(error.message || "We couldn’t process your payment.");
+        setLoading(false);
+        return;
+      }
+
+      if (paymentIntent && paymentIntent.status === "succeeded") {
+        window.location.href = "{% url 'checkout:success' order.order_number %}";
+        return;
+      }
+
+      const result = await stripe.retrievePaymentIntent(clientSecret);
+      if (result && result.paymentIntent && result.paymentIntent.status === "succeeded") {
+        window.location.href = "{% url 'checkout:success' order.order_number %}";
+      } else {
+        showMessage("We are confirming your payment. If this page does not update automatically, please check your orders later.");
+        setLoading(false);
+      }
+    } catch (err) {
+      console.error(err);
+      showMessage("An unexpected error occurred. Please try again.");
+      setLoading(false);
+    }
+  });
+})();
+</script>
+{% endblock extrajs %}
